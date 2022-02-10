@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content={{description}}>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="fixed-top bg-light nav" style="padding: 30px 10px">
+        <button class="btn" style="margin-right: 40px; " data-bs-toggle="offcanvas" href="#offcanvasExample">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </button>
+        <div style="width: 100vh">
+            <img src="{{ url_for('static', filename='assets/Mack_Logo.svg') }}" height="60">
+            <img src="{{ url_for('static', filename='assets/Sennerei_Logo.png') }}" height="60" style="margin-left: 5%">
+        </div>
+    </div>
+
+    <div class="offcanvas-body">
+        <div class="d-flex flex-column flex-shrink-0 float-left bg-light offcanvas offcanvas-start" tabindex="-1"
+            id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+            style="width: 10rem; height: 100vh; background: none">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center" style="margin-top: 10vh">
+                <li class="nav-item">
+                    <a href="/" class="nav-link py-3 border-bottom" aria-current="page" title="Messung">
+                        <img src="{{ url_for('static', filename='assets/graph-up.svg') }}" height="40px">
+                    </a>
+                </li>
+                <li>
+                    <a href="/data" class="nav-link py-3 border-bottom" title="Datenbestand">
+                        <img src="{{ url_for('static', filename='assets/archive.svg') }}" height="40px">
+                    </a>
+                </li>
+                <li>
+                    <a href="/settings" class="nav-link py-3 border-bottom" title="Einstellungen">
+                        <img src="{{ url_for('static', filename='assets/gear.svg') }}" height="40px">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample">
+        Link with href
+    </a>
+    <div class='container custom-container'>
+        <div class="jumbotron jumbotron-fluid jumbotron-custom">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+    {%block js%} {%endblock%}
+</body>
+
+</html>
