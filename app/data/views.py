@@ -5,7 +5,6 @@ import io
 import csv as csvPackage
 
 from flask import Blueprint, render_template, url_for, flash, Response, jsonify, request, redirect
-from app.globals import MEASUREMENT_IS_ACTIVE
 import app.backend.db_connection as DBCon
 
 data_bp = Blueprint('data_bp', __name__, template_folder='pages')
@@ -59,9 +58,11 @@ def download_csv(tablename):
 @data_bp.route('/searchValues', methods=['POST'])
 def searchValues():
     try:
-        dateFrom = request.form['SearchDateFrom']
-        dateTo = request.form['SearchDateTo']
+        dateFrom = request.form['minDate']
+        dateTo = request.form['maxDate']
+        print(dateFrom)
         values = DBCon.getValuesFromTo(dateFrom, dateTo)
+        print(values)
         return jsonify(values)
     except Exception as ex:
         logging.error("Data.getTable(): " + str(ex) +

@@ -27,7 +27,6 @@ def chart():
                       "\n" + traceback.format_exc())
 
 
-# Methods for Chart
 @measurement_bp.route('/toggleMeasuring')
 def toggleMeasuring():
     try:
@@ -38,19 +37,6 @@ def toggleMeasuring():
         return jsonify(MEASUREMENT_IS_ACTIVE)
     except Exception as ex:
         logging.error("Measurement.toggleMeasuring(): " + str(ex) +
-                      "\n" + traceback.format_exc())
-
-
-
-
-@measurement_bp.route('/setMeasurementDistance', methods=['POST'])
-def getMeasurementDistance():
-    try:
-        global METADATA_DISTANCE
-        METADATA_DISTANCE = request.form['distance']
-        return 'valid'
-    except Exception as ex:
-        logging.error("Measurement.getMeasurementDistance(): " + str(ex) +
                       "\n" + traceback.format_exc())
 
 
@@ -90,15 +76,17 @@ def isPActive():
 
 @measurement_bp.route('/chart-data', methods=['GET'])
 def chart_data():
+    amount = 20
+    lastVals = DBCon.getLatestValues(amount)
     try:
-        for idx, entry in enumerate(DBCon.getLatestValues(20)):
+        for i in range(amount-1, -1, -1):
             data = {
-                "index": idx,
-                "time": str(entry[0]),
-                "temp1": entry[1],
-                "temp2": entry[2],
-                "temp3": entry[3],
-                "temp4": entry[4]
+                "index": i,
+                "time": lastVals[i][0].strftime("%H:%M:%S"),
+                "temp1": lastVals[i][1],
+                "temp2": lastVals[i][2],
+                "temp3": lastVals[i][3],
+                "temp4": lastVals[i][4]
             }
             VALUES.append(data)
         return Response(getMeasurementValues(), mimetype="text/event-stream")

@@ -57,8 +57,10 @@ class MyUDPRequestHandler(socketserver.DatagramRequestHandler):
                 "temp3": float(typeDataSplit[5]),
                 "temp4": float(typeDataSplit[6])
             }
-            VALUES.append(data)
             insertValue(data)
+            time = data["time"].split(" ")[1].split(".")[0]
+            data["time"] = time
+            VALUES.append(data)
 
     def readStatus(self, message):
         print(message)

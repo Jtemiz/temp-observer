@@ -10,10 +10,10 @@
            min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
     <button type="button" id="searchBtn" class="btn btn-primary" onclick="searchValues()">Suche Starten</button>
 </div>
-<div>
+<canvas id="canvas" hidden></canvas>
 
-</div>
-
+<button type="button" onclick="openDataPDF()"> open PDF</button>
+<!--
 <table class="table table-striped">
     <thead>
     <tr>
@@ -60,7 +60,7 @@
     {%endfor%}
     </tbody>
 </table>
-
+-->
 
 <!-- Modal -->
 <div class="modal fade" id="modalDisplay" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,7 +72,6 @@
             </div>
             <div class="modal-body">
                 <div class="spinner-border text-primary" id="spinnerDisplayModal" role="status"></div>
-                <canvas id="canvas" hidden></canvas>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
@@ -105,4 +104,10 @@
 {%block js%}
 <script src="{{ url_for('static', filename='data.js') }}"></script>
 <script src="{{ url_for('static', filename='chart.min.js') }}"></script>
+<script src="{{ url_for('static', filename='chartjs-plugin-zoom.min.js') }}"></script>
+<script src="{{ url_for('static', filename='pdfmake.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vfs_fonts.min.js') }}"></script>
+
+
+
 {%endblock%}

@@ -74,8 +74,8 @@ def getValuesFromTo(timeFrom, timeTo):
         print(timeFrom, timeTo)
         cnx = mysql_connection_pool.connection()
         cursor = cnx.cursor()
-        sql = "SELECT zeit, temp1, temp2, temp3, temp4 FROM y2022 WHERE zeit > %s AND zeit < %s"
-        cursor.execute(sql, (timeFrom.year, timeFrom, timeTo))
+        sql = "SELECT zeit, temp1, temp2, temp3, temp4 FROM y2022 WHERE zeit >= %s AND zeit <= %s"
+        cursor.execute(sql, (timeFrom, timeTo + '+ 23:59:59.999'))
         result = cursor.fetchall()
         cursor.close()
         cnx.close()
