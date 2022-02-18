@@ -1,6 +1,6 @@
 var lineChart = null;
 var choosedMeasurement = "";
-
+var storedData = []
 function saveCSV(tablename) {
 	window.location.href = "/saveCSV/" + tablename;
 }
@@ -17,17 +17,19 @@ function searchValues() {
 		minDate: document.getElementById("SearchDateFrom").value,
 		maxDate: document.getElementById("SearchDateTo").value
 	}, function (data) {
-		console.log(data);
-		for (let i = 0; i < data.length; i++) {
-			config.data.labels.push(new Date(Date.parse(data[i][0])).toLocaleString());
-			config.data.datasets[0].data.push(data[i][1]);
-			config.data.datasets[1].data.push(data[i][2]);
-			config.data.datasets[2].data.push(data[i][3]);
-			config.data.datasets[3].data.push(data[i][4]);
+		console.log(data)
+		storedData = data;
+		for (let i = 0; i < data.metaData.dataSize; i++) {
+			config.data.labels.push(new Date(Date.parse(data.values[i][0])).toLocaleString());
+			config.data.datasets[0].data.push(data.values[i][1]);
+			config.data.datasets[1].data.push(data.values[i][2]);
+			config.data.datasets[2].data.push(data.values[i][3]);
+			config.data.datasets[3].data.push(data.values[i][4]);
 		}
 		console.log(config.data.datasets[1])
 		lineChart.update();
 		$("#canvas").removeAttr("hidden");
+		$("#createPDFBtn").removeAttr("hidden");
 	});
 }
 
@@ -69,6 +71,7 @@ const config = {
 		],
 	},
 	options: {
+		spanGaps: true,
 		responsive: true,
 		title: {
 			display: true,
@@ -108,7 +111,7 @@ const config = {
 				}
 			}]
 		},
-		animation: true,
+		animation: false,
 		plugins: {
 			zoom: {
 				pan: {
@@ -126,8 +129,18 @@ const config = {
 					},
 					mode: 'x',
 				}
+			},
+			decimation: {
+				enabled: true,
+				algorithm: 'min-max',
+				samples: 50
+			},
+		},
+		datasets: {
+			line: {
+				pointRadius: 0 // disable for all `'line'` datasets
 			}
-		}
+		},
 	},
 };
 
@@ -152,41 +165,15 @@ function displayMeasurement(tablename) {
 	});
 }
 
+var PDFHeader = [{ text: 'Datum/Uhrzeit', style: 'tableHeader' }, { text: 'System 1', style: 'tableHeader' }, { text: 'System 2', style: 'tableHeader' }, { text: 'System 3', style: 'tableHeader' }, { text: 'System 4', style: 'tableHeader' }]
+
+
 var docDefinition = {
-	background: function (page) {
-		if (page !== 2) {
-			return [
-				'Background paragraph on page ' + page,
-				'Another background paragraph, this time a little bit longer to make sure, this line will be divided into at least two lines',
-				{
-					image: 'mack',
-					width: 200
-				}
-			];
-		}
-	},
 	content: [
 		{ text: 'Headers', pageBreak: 'before', style: 'subheader' },
 		'You can declare how many rows should be treated as a header. Headers are automatically repeated on the following pages',
-		{ text: ['It is also possible to set keepWithHeaderRows to make sure there will be no page-break between the header and these rows. Take a look at the document-definition and play with it. If you set it to one, the following table will automatically start on the next page, since there\'s not enough space for the first row to be rendered here'], color: 'gray', italics: true },
-		{
-			style: 'tableExample',
-			table: {
-				headerRows: 1,
-				// dontBreakRows: true,
-				// keepWithHeaderRows: 1,
-				body: [
-					[{ text: 'Datum/Uhrzeit', style: 'tableHeader' }, { text: 'System 1', style: 'tableHeader' }, { text: 'System 2', style: 'tableHeader' }, { text: 'System 3', style: 'tableHeader' }, { text: 'System 4', style: 'tableHeader' }],
-					[
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-					]
-				]
-			}
-		}
+		{ text: ['It is also possible to set keepWithHeaderRows to make sure there will be no page-break between the header and these rows. Take a look at the document-definition and play with it. If you set it to one, the following table will automatically start on the next page, since there\'s not enough space for the first row to be rendered here'], color: 'gray', italics: true }
+
 	],
 
 	images: {
@@ -231,7 +218,41 @@ var docDefinition = {
 	}
 };
 
+function createPDFDocDefinition() {
+	var dd = docDefinition;
+	dd.content.push(
+		{
+			style: 'tableExample',
+			table: {
+				headerRows: 1,
+				// dontBreakRows: true,
+				// keepWithHeaderRows: 1,
+				body: createTableBody(storedData.values, PDFHeader)
+			}
+		}
+	);
+	return dd;
+}
+
+function createTableBody(data, columns) {
+	var body = [];
+	body.push(columns);
+	var insertableData = data[0].map((_, colIndex) => data.map(row => row[colIndex]));
+	console.log(insertableData)
+	body.push(insertableData)
+	return body;
+}
+
+function table(data, columns) {
+	return {
+		table: {
+			headerRows: 1,
+			body: buildTableBody(data, columns)
+		}
+	};
+}
+
 function openDataPDF() {
-	pdfMake.createPdf(docDefinition).open();
+	pdfMake.createPdf(createPDFDocDefinition()).open();
 }
 

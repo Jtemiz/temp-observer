@@ -60,10 +60,16 @@ def searchValues():
     try:
         dateFrom = request.form['minDate']
         dateTo = request.form['maxDate']
-        print(dateFrom)
         values = DBCon.getValuesFromTo(dateFrom, dateTo)
-        print(values)
-        return jsonify(values)
+        metaData = {
+            'dateFrom': dateFrom,
+            'dateTo': dateTo,
+            'dataSize': len(values)
+        }
+        return jsonify({
+            'metaData': metaData,
+            'values': values
+        })
     except Exception as ex:
         logging.error("Data.getTable(): " + str(ex) +
                       "\n" + traceback.format_exc())

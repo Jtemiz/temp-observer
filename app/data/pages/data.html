@@ -9,10 +9,12 @@
            value="{{dates['maxDate']}}"
            min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
     <button type="button" id="searchBtn" class="btn btn-primary" onclick="searchValues()">Suche Starten</button>
+    <button type="button" id="createPDFBtn" onclick="openDataPDF()" hidden> open PDF</button>
+    <button type="button" id="createCSVBtn" onclick="openDataPDF()" hidden> open PDF</button>
+
 </div>
 <canvas id="canvas" hidden></canvas>
 
-<button type="button" onclick="openDataPDF()"> open PDF</button>
 <!--
 <table class="table table-striped">
     <thead>
