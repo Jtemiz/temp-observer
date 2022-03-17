@@ -1,105 +1,29 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="input-group mb-3">
-    <input type="date" id="SearchDateFrom" name="von"
+<div class="input-group mb-3 input-group-custom">
+    <input class="form-control" type="date" id="SearchDateFrom" name="von"
            value="{{dates['minDate']}}"
-           min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
-    <input type="date" id="SearchDateTo" name="bis"
+           min="{{dates['minDate']}}" max="{{dates[0]}}">
+    <input class="form-control" type="date" id="SearchDateTo" name="bis"
            value="{{dates['maxDate']}}"
            min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
-    <button type="button" id="searchBtn" class="btn btn-primary" onclick="searchValues()">Suche Starten</button>
-    <button type="button" id="createPDFBtn" onclick="openDataPDF()" hidden> open PDF</button>
-    <button type="button" id="createCSVBtn" onclick="openDataPDF()" hidden> open PDF</button>
-
+    <button class="btn data-btn-custom" type="button" id="searchBtn" onclick="searchValues()">
+        <img src="{{ url_for('static', filename='assets/search-icon.svg') }}" height="20">
+        <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+    </button>
+    <button class="btn data-btn-custom" type="button" id="createPDFBtn" onclick="openDataPDF()" hidden>
+        <img src="{{ url_for('static', filename='assets/file-pdf-solid.svg') }}" height="20">
+    </button>
+    <button class="btn data-btn-custom" type="button" id="createCSVBtn" onclick="saveCSV()" hidden>
+        <img src="{{ url_for('static', filename='assets/file-excel-solid.svg') }}" height="20">
+    </button>
+    <button class="btn data-btn-custom" type="button" id="openChartBtn" data-bs-toggle="collapse" data-bs-target="#chart-collapse" aria-expanded="false" aria-controls="chart-collapse" hidden>
+        <img src="{{ url_for('static', filename='assets/graph-up.svg') }}" height="20">
+    </button>
 </div>
-<canvas id="canvas" hidden></canvas>
-
-<!--
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Messort</th>
-        <th scope="col">Messdistanz</th>
-        <th scope="col">Durchführender</th>
-        <th scope="col">Baumaßnahme</th>
-        <th scope="col">Anzeigen</th>
-        <th scope="col">Download</th>
-        <th scope="col">Löschen</th>
-    </tr>
-    </thead>
-    <tbody>
-    {%for table in tables%}
-    <tr>
-        <th scope="row">{{loop.index}}</th>
-        <td>{{table.measurement}}</td>
-        <td>{{table.place}}</td>
-        <td>{{table.distance}}</td>
-        <td>{{table.user}}</td>
-        <td>{{table.measure}}</td>
-        <td>
-            <div class="list-icon-field">
-                <button type="button" onclick="displayMeasurement({{ table.measurement }})" class="btn"
-                        data-bs-toggle="modal" data-bs-target="#modalDisplay">
-                    <img src="{{ url_for('static', filename='assets/eye.svg') }}">
-                </button>
-            </div>
-        </td>
-        <td>
-            <button class="btn" onclick="saveCSV({{ table.measurement }})">
-                <img src="{{ url_for('static', filename='assets/download.svg') }}">
-            </button>
-        </td>
-        <td>
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDelete"
-                    onclick="changeChoosedMeasurement({{ table.measurement }})">
-                <img src="{{ url_for('static', filename='assets/trash.svg') }}">
-            </button>
-        </td>
-    </tr>
-    {%endfor%}
-    </tbody>
-</table>
--->
-
-<!-- Modal -->
-<div class="modal fade" id="modalDisplay" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Messung</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="spinner-border text-primary" id="spinnerDisplayModal" role="status"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Wollen Sie die Messung wirklich löschen?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Lieber nicht</button>
-                <button type="button" id="deleteBtnModal" class="btn btn-primary" data-bs-dismiss="modal"
-                        onclick="deleteTable()">Ja
-                </button>
-            </div>
-        </div>
-    </div>
+<div class="collapse" id="chart-collapse">
+    <canvas id="canvas"></canvas>
 </div>
 
 {% endblock %}

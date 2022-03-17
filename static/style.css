@@ -119,5 +119,15 @@ Chart Styles
     width: 100px;
 }
 
+.input-group-custom {
+    width: fit-content;
+}
 
+.data-btn-custom {
+    border: 1px solid #ced4da;
+    transition: 0.3s;
+}
 
+.data-btn-custom:hover {
+    background-color: #d9d8d8;
+}

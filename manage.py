@@ -6,7 +6,7 @@ from flask_script.commands import Clean, ShowUrls
 from app.factory import create_app
 # default to dev config because no one should use this in
 # production anyway
-env = os.environ.get('APPNAME_ENV', 'Base')
+env = os.environ.get('APPNAME_ENV', 'Dev')
 app = create_app('app.config.%sConfig' % env.capitalize())
 
 manager = Manager(app)

@@ -2,11 +2,11 @@ import logging
 
 from flask import Flask
 from app.measurement.views import initConnection
-
+from app.config import DevConfig, BaseConfig
 root_path = None
 
 
-def create_app(config=None):
+def create_app(config=DevConfig):
     global root_path
     """
     Factory pattern; create new app with specified config
@@ -49,6 +49,7 @@ def load_blueprints(app):
 
     from .measurement.views import measurement_bp
     from .data.views import data_bp
+
     # register blueprints
     app.register_blueprint(measurement_bp)
     app.register_blueprint(data_bp)

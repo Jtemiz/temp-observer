@@ -47,7 +47,6 @@ def insertValue(data):
         if fileSize == 0:
             sql = "INSERT INTO `y2022` VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(sql, (data['time'], data['temp1'], data['temp2'], data['temp3'], data['temp4']))
-            print("No Data to Upload")
         # there was a connection error and no it is solved --> insert values from the last times
         else:
             reader = pd.read_csv('/Users/jtemiz/finishedProjs/temp-observer/logs/tmpBuffer.csv', header=None)
@@ -55,7 +54,6 @@ def insertValue(data):
             cursor.executemany(sql, list(reader).append(data))
             with open('/Users/jtemiz/finishedProjs/temp-observer/logs/tmpBuffer.csv', 'w') as file:
                 file.truncate()
-            print("stored Data uploaded")
         cnx.commit()
         cursor.close()
         cnx.close()
@@ -71,7 +69,6 @@ def insertValue(data):
 
 def getValuesFromTo(timeFrom, timeTo):
     try:
-        print(timeFrom, timeTo)
         cnx = mysql_connection_pool.connection()
         cursor = cnx.cursor()
         sql = "SELECT zeit, temp1, temp2, temp3, temp4 FROM y2022 WHERE zeit >= %s AND zeit <= %s"
@@ -106,5 +103,4 @@ def getLatestValues(amount):
     cursor.execute(sql, amount)
     result = cursor.fetchall()
     cursor.close()
-    print(result)
     return result

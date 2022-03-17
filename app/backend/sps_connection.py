@@ -9,6 +9,7 @@ import threading
 import app.globals
 from app.globals import VALUES, LONGTERM_VALUES
 from app.backend.db_connection import insertValue
+
 ARD_UDP_IP_SEND = "192.168.5.2"
 ARD_UDP_PORT_SEND = 9000
 ARD_UDP_IP_RECEIVE = "127.0.0.1"
@@ -29,18 +30,6 @@ def sendStatus():
     except Exception as ex:
         logging.error("arduino_connection.sendStatus(): " + str(ex) +
                       "\n" + traceback.format_exc())
-
-def startReset_Arduino():
-    try:
-        LONGTERM_VALUES.clear()
-        VALUES.clear()
-        SUDPServer.start_server()
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto(ARD_StartReset, (ARD_UDP_IP_SEND, ARD_UDP_PORT_SEND))
-        sock.close()
-    except Exception as ex:
-        logging.error("arduino_connection.startReset_Arduino(): " + str(ex) +
-                    "\n" + traceback.format_exc())
 
 class MyUDPRequestHandler(socketserver.DatagramRequestHandler):
     def handle(self):
@@ -90,7 +79,6 @@ class SUDPServer():
 
     @staticmethod
     def start_server():
-        print("Server Started")
         if SUDPServer.__server == None:
             SUDPServer()
             SUDPServer.__server.start()

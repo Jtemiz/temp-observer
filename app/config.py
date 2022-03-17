@@ -16,4 +16,4 @@ class DevConfig(object):
     DEBUG = True
     TESTING = True
     SECRET_KEY = os.urandom(12)
-    DEBUG_TB_INTERCEPT_REDIRECTS = False
+    DEBUG_TB_INTERCEPT_REDIRECTS = True
