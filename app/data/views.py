@@ -1,4 +1,5 @@
 import datetime
+import json
 import logging
 import traceback
 import io
@@ -35,7 +36,7 @@ def download_csv():
         line = ['Zeit;System1;System2;System3;System4']
         writer.writerow(line)
         for row in data:
-            line = [row[0].strftime("%d.%m.%Y, %H:%M:%S") + ';' + str(row[1]) + ';' + str(row[2] ) + ';' + str(row[3]) + ';' + str(row[4])]
+            line = [row[0].strftime("%Y-%m-%d %H:%M:%S") + ';' + str(row[1]) + ';' + str(row[2] ) + ';' + str(row[3]) + ';' + str(row[4])]
             writer.writerow(line)
         output.seek(0)
         return Response(

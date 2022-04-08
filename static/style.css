@@ -109,15 +109,6 @@ Chart Styles
     margin:0 auto;
 }
 
-.chartBtnGroups {
-    margin-bottom: 5px;
-    border-width: 2px;
-}
-
-.startStopPause {
-    height: 100px;
-    width: 100px;
-}
 
 .input-group-custom {
     width: fit-content;

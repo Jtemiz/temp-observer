@@ -33,7 +33,7 @@ def chart_data():
         for i in range(amount-1, -1, -1):
             data = {
                 "index": i,
-                "time": lastVals[i][0].strftime("%H:%M:%S"),
+                "time": lastVals[i][0],
                 "temp1": lastVals[i][1],
                 "temp2": lastVals[i][2],
                 "temp3": lastVals[i][3],
@@ -51,18 +51,17 @@ def getMeasurementValues():
         if len(VALUES) != 0:
             try:
                 tmp = VALUES
-                data = json.dumps(tmp)
+                data = json.dumps(tmp, default=str)
                 del VALUES[:len(tmp)]
                 yield f"data: {data}\n\n"
-                time.sleep(1.)
+                time.sleep(5.)
             except Exception as ex:
-                logging.error("routes.getMeasurementValues(): " + str(ex) +
+                logging.error("Measurement.getMeasurementValues(): " + str(ex) +
                               "\n" + traceback.format_exc())
 
 def stopConnection():
     try:
         SPS_Con.SUDPServer.stop_server()
-        IS_LISTING = False
     except Exception as ex:
         logging.error("Measurement.stopConnection(): " + str(ex) +
                       "\n" + traceback.format_exc())
@@ -71,7 +70,7 @@ def stopConnection():
 def initConnection():
     try:
         SPS_Con.SUDPServer.start_server()
-        IS_LISTING = True
     except Exception as ex:
         logging.error("Measurement.initConnections(): " + str(ex) +
                       "\n" + traceback.format_exc())
+

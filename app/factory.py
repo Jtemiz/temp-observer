@@ -6,7 +6,7 @@ from app.config import DevConfig, BaseConfig
 root_path = None
 
 
-def create_app(config=DevConfig):
+def create_app(config=BaseConfig):
     global root_path
     """
     Factory pattern; create new app with specified config
@@ -32,11 +32,11 @@ def create_app(config=DevConfig):
     # DEBUG 10
     # NOTSET 0
 
-    initConnection()
-
-    logging.basicConfig(filename=app.root_path + '/logs/app.log', level=logging.INFO,
+    logging.basicConfig(filename=app.root_path + '/logs/app.log', level=logging.WARNING,
                     format='%(asctime)s - %(levelname)s: %(message)s')
     logging.info("[i] App initialized")
+
+    initConnection()
 
     return app
 

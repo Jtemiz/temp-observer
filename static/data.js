@@ -29,7 +29,7 @@ function searchValues() {
             config.data.datasets[3].data = [];
             storedData = data;
             for (let i = 0; i < data.metaData.dataSize; i++) {
-                config.data.labels.push(new Date(Date.parse(data.values[i][0])).toLocaleString());
+                config.data.labels.push(new Date(Date.parse(data.values[i][0])).toISOString().slice(0, 19).replace('T', ' '));
                 config.data.datasets[0].data.push(data.values[i][1]);
                 config.data.datasets[1].data.push(data.values[i][2]);
                 config.data.datasets[2].data.push(data.values[i][3]);
@@ -39,6 +39,7 @@ function searchValues() {
             $("#openChartBtn").removeAttr("hidden");
             $("#createPDFBtn").removeAttr("hidden");
             $("#createCSVBtn").removeAttr("hidden");
+            $("#lastWeekBtn")
             $("#loading-spinner").attr("hidden", true);
             $("#searchBtn").removeAttr("disabled");
         });
@@ -100,18 +101,12 @@ const config = {
                 min: 5,
                 ticks: {
                     stepSize: 5
-                    //steps 1, 2, 3, 4, 8, 10, 12, 15, 20
                 }
             },
             x: [{
                 scaleLabel: {
                     type: 'datetime',
-                    display: true,
                     labelString: 'Zeit',
-                    time: {
-                        format: timeFormat,
-                        tooltipFormat: 'll'
-                    },
                 },
                 ticks: {
                     autoSkip: true,
@@ -127,7 +122,8 @@ const config = {
                         enabled: true,
                     },
                     drag: {
-                        enabled: true
+                        enabled: true,
+                        backgroundColor: "rgba(0,74,159,0.3)"
                     },
                     mode: 'x',
                 },
@@ -238,7 +234,7 @@ function createTableBody(data, columns) {
     var insertableData = data[0].map((_, colIndex) => data.map(row => row[colIndex]));
     var dates = [];
     insertableData[0].forEach(date => {
-        dates.push(new Date(date).toLocaleString());
+        dates.push(new Date(date).toISOString().slice(0, 19).replace('T', ' '));
     });
     insertableData[0] = dates;
     body.push(insertableData);
@@ -256,4 +252,25 @@ function table(data, columns) {
 
 function openDataPDF() {
     pdfMake.createPdf(createPDFDocDefinition()).open();
+}
+
+function chooseLastWeek() {
+    const today = new Date();
+    const lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 6);
+    document.getElementById("SearchDateFrom").value = lastWeek.toISOString().split('T')[0];
+    document.getElementById("SearchDateTo").value = today.toISOString().split('T')[0];
+}
+
+function chooseLastMonth() {
+    const today = new Date();
+    const lastWeek = new Date(today.getFullYear(), today.getMonth()-1, today.getDate()+1);
+    document.getElementById("SearchDateFrom").value = lastWeek.toISOString().split('T')[0];
+    document.getElementById("SearchDateTo").value = today.toISOString().split('T')[0];
+}
+
+function chooseLast3Month() {
+    const today = new Date();
+    const lastWeek = new Date(today.getFullYear(), today.getMonth()-3, today.getDate()+1);
+    document.getElementById("SearchDateFrom").value = lastWeek.toISOString().split('T')[0];
+    document.getElementById("SearchDateTo").value = today.toISOString().split('T')[0];
 }

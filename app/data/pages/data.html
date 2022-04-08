@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/html" style="display: none;">
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </symbol>
+</svg>
+<div class="alert alert-primary d-flex align-items-center alert-dismissible show" role="alert" id="info-alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+    Gewünschten Auslesezeitraum wählen
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <div class="input-group mb-3 input-group-custom">
     <input class="form-control" type="date" id="SearchDateFrom" name="von"
            value="{{dates['minDate']}}"
@@ -10,15 +20,25 @@
            min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
     <button class="btn data-btn-custom" type="button" id="searchBtn" onclick="searchValues()">
         <img src="{{ url_for('static', filename='assets/search-icon.svg') }}" height="20">
-        <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+        <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+              hidden></span>
     </button>
+    <button type="button" class="btn data-btn-custom dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="chooseLastWeek()">Letzte Woche</a></li>
+        <li><a class="dropdown-item" onclick="chooseLastMonth()">Letzter Monat</a></li>
+        <li><a class="dropdown-item" onclick="chooseLast3Month()">Letzten 3 Monate</a></li>
+    </ul>
     <button class="btn data-btn-custom" type="button" id="createPDFBtn" onclick="openDataPDF()" hidden>
         <img src="{{ url_for('static', filename='assets/file-pdf-solid.svg') }}" height="20">
     </button>
     <button class="btn data-btn-custom" type="button" id="createCSVBtn" onclick="saveCSV()" hidden>
         <img src="{{ url_for('static', filename='assets/file-excel-solid.svg') }}" height="20">
     </button>
-    <button class="btn data-btn-custom" type="button" id="openChartBtn" data-bs-toggle="collapse" data-bs-target="#chart-collapse" aria-expanded="false" aria-controls="chart-collapse" hidden>
+    <button class="btn data-btn-custom" type="button" id="openChartBtn" data-bs-toggle="collapse"
+            data-bs-target="#chart-collapse" aria-expanded="false" aria-controls="chart-collapse" hidden>
         <img src="{{ url_for('static', filename='assets/graph-up.svg') }}" height="20">
     </button>
 </div>
@@ -33,7 +53,6 @@
 <script src="{{ url_for('static', filename='chartjs-plugin-zoom.min.js') }}"></script>
 <script src="{{ url_for('static', filename='pdfmake.min.js') }}"></script>
 <script src="{{ url_for('static', filename='vfs_fonts.min.js') }}"></script>
-
 
 
 {%endblock%}
