@@ -7,7 +7,9 @@
     </symbol>
 </svg>
 <div class="alert alert-primary d-flex align-items-center alert-dismissible show" role="alert" id="info-alert">
-    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+        <use xlink:href="#info-fill"/>
+    </svg>
     Gewünschten Auslesezeitraum wählen
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
@@ -24,7 +26,8 @@
         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
               hidden></span>
     </button>
-    <button type="button" class="btn data-btn-custom dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn data-btn-custom dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+            aria-expanded="false">
         <span class="visually-hidden">Toggle Dropdown</span>
     </button>
     <!--
@@ -47,7 +50,11 @@
     </button>
 </div>
 <div class="collapse" id="chart-collapse">
-    <canvas id="canvas"></canvas>
+    <div class="card">
+        <div class="card-body">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

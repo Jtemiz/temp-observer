@@ -51,7 +51,6 @@ $(document).ready(function () {
                     min: 5,
                     ticks: {
                         stepSize: 5
-                        //steps 1, 2, 3, 4, 8, 10, 12, 15, 20
                     }
                 },
                 x: [{

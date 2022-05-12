@@ -89,26 +89,11 @@ main {
 .lh-tight { line-height: 1.25; }
 
 .jumbotron-custom {
-    margin-top: 10%;
+    margin-top: min(70px, 10%);
     background-color: #e9ecef;
     border-radius: .3rem;
     padding: 50px;
 }
-
-.offcanvas-custom {
-    background: #0a53be !important;
-    border-radius: 10px !important;
-    width: 200px !important;
-}
-
-/*
-Chart Styles
- */
-
-.img-center {
-    margin:0 auto;
-}
-
 
 .input-group-custom {
     width: fit-content;
