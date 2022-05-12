@@ -6,6 +6,11 @@ tasks
 
 
 class BaseConfig(object):
+    TOASTR_JQUERY_VERSION = '3.6.0'
+    TOASTR_PREVENT_DUPLICATES = 'true'
+    TOASTR_TIMEOUT = 0
+    TOASTR_EXTENDED_TIMEOUT = 0
+
     DEBUG = False
     TESTING = False
     SECRET_KEY = os.urandom(12)

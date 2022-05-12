@@ -28,18 +28,27 @@ function searchValues() {
             config.data.datasets[2].data = [];
             config.data.datasets[3].data = [];
             storedData = data;
-            for (let i = 0; i < data.metaData.dataSize; i++) {
-                config.data.labels.push(new Date(Date.parse(data.values[i][0])).toISOString().slice(0, 19).replace('T', ' '));
-                config.data.datasets[0].data.push(data.values[i][1]);
-                config.data.datasets[1].data.push(data.values[i][2]);
-                config.data.datasets[2].data.push(data.values[i][3]);
-                config.data.datasets[3].data.push(data.values[i][4]);
+            if (data.values.length === 0) {
+                show_toast(
+                    "info",
+                    "In dem gewünschten Suchbereich liegen keine Werte vor",
+                    10000,
+                    3000
+                );
             }
-            lineChart.update();
-            $("#openChartBtn").removeAttr("hidden");
-            $("#createPDFBtn").removeAttr("hidden");
-            $("#createCSVBtn").removeAttr("hidden");
-            $("#lastWeekBtn")
+            else {
+                for (let i = 0; i < data.metaData.dataSize; i++) {
+                    config.data.labels.push(new Date(Date.parse(data.values[i][0])).toISOString().slice(0, 19).replace('T', ' '));
+                    config.data.datasets[0].data.push(data.values[i][1]);
+                    config.data.datasets[1].data.push(data.values[i][2]);
+                    config.data.datasets[2].data.push(data.values[i][3]);
+                    config.data.datasets[3].data.push(data.values[i][4]);
+                }
+                lineChart.update();
+                $("#openChartBtn").removeAttr("hidden");
+                $("#createPDFBtn").removeAttr("hidden");
+                $("#createCSVBtn").removeAttr("hidden");
+            }
             $("#loading-spinner").attr("hidden", true);
             $("#searchBtn").removeAttr("disabled");
         });
@@ -263,14 +272,43 @@ function chooseLastWeek() {
 
 function chooseLastMonth() {
     const today = new Date();
-    const lastWeek = new Date(today.getFullYear(), today.getMonth()-1, today.getDate()+1);
+    const lastWeek = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate() + 1);
     document.getElementById("SearchDateFrom").value = lastWeek.toISOString().split('T')[0];
     document.getElementById("SearchDateTo").value = today.toISOString().split('T')[0];
 }
 
 function chooseLast3Month() {
     const today = new Date();
-    const lastWeek = new Date(today.getFullYear(), today.getMonth()-3, today.getDate()+1);
+    const lastWeek = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate() + 1);
     document.getElementById("SearchDateFrom").value = lastWeek.toISOString().split('T')[0];
     document.getElementById("SearchDateTo").value = today.toISOString().split('T')[0];
+}
+
+function show_toast(category, message, timeOut = 0, extendedTimeOut = 0, title = "Information", location = "toast-top-right") {
+    toastr.options.closeButton = true;
+    toastr.options.showEasing = "swing";
+    toastr.options.hideEasing = "linear";
+    toastr.options.closeEasing = "linear";
+    toastr.options.showMethod = "fadeIn";
+    toastr.options.hideMethod = "fadeOut";
+    toastr.options.closeMethod = "fadeOut";
+    toastr.options.timeOut = timeOut;
+    toastr.options.extendedTimeOut = extendedTimeOut;
+    toastr.options.positionClass = location;
+    toastr.options.preventDuplicates = true;
+    toastr.options.newestOnTop = false;
+    toastr.options.progressBar = true;
+
+    switch (category) {
+        case "warning":
+            toastr.warning(message, title);
+        case "success":
+            toastr.success(message, title);
+        case "error":
+            toastr.error(message, title);
+        case "info":
+            toastr.info(message, title);
+        default:
+            toastr.info(message, title);
+    }
 }

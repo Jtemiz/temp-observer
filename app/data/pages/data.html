@@ -15,6 +15,7 @@
     <input class="form-control" type="date" id="SearchDateFrom" name="von"
            value="{{dates['minDate']}}"
            min="{{dates['minDate']}}" max="{{dates[0]}}">
+
     <input class="form-control" type="date" id="SearchDateTo" name="bis"
            value="{{dates['maxDate']}}"
            min="{{dates['minDate']}}" max="{{dates['maxDate']}}">
@@ -26,6 +27,9 @@
     <button type="button" class="btn data-btn-custom dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="visually-hidden">Toggle Dropdown</span>
     </button>
+    <!--
+    shortcuts
+    -->
     <ul class="dropdown-menu">
         <li><a class="dropdown-item" onclick="chooseLastWeek()">Letzte Woche</a></li>
         <li><a class="dropdown-item" onclick="chooseLastMonth()">Letzter Monat</a></li>

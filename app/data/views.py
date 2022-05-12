@@ -1,11 +1,10 @@
-import datetime
-import json
+
 import logging
 import traceback
 import io
 import csv as csvPackage
-
-from flask import Blueprint, render_template, url_for, flash, Response, jsonify, request, redirect
+from app.measurement.views import generateToastr
+from flask import Blueprint, render_template, url_for, Response, jsonify, request
 import app.backend.db_connection as DBCon
 
 data_bp = Blueprint('data_bp', __name__, template_folder='pages')
@@ -13,11 +12,12 @@ data_bp = Blueprint('data_bp', __name__, template_folder='pages')
 @data_bp.route('/data')
 def data():
     try:
+        generateToastr()
         return render_template(
             'data.html',
             title="Datenbestand",
             description="Datenbestand",
-            dates={'minDate': DBCon.getMinMaxDate()['minDate'].strftime("%Y-%m-%d"), 'maxDate': DBCon.getMinMaxDate()['maxDate'].strftime("%Y-%m-%d")}
+            dates={'minDate': DBCon.getMinMaxDate()['minDate'].strftime("%Y-%m-%d"), 'maxDate': DBCon.getMinMaxDate()['maxDate'].strftime("%Y-%m-%d")},
         )
     except Exception as ex:
         logging.error("Data.data(): " + str(ex) +
@@ -67,3 +67,14 @@ def searchValues():
         logging.error("Data.getTable(): " + str(ex) +
                       "\n" + traceback.format_exc())
 
+
+
+"""
+SELECT A, B FROM tableA
+UNION
+SELECT A, B FROM tableB
+EXCEPT
+SELECT A, B FROM tableA
+INTERSECT
+SELECT A B FROM tableB;
+"""

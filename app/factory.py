@@ -1,10 +1,12 @@
 import logging
 
 from flask import Flask
+from flask_toastr import Toastr
 from app.measurement.views import initConnection
 from app.config import DevConfig, BaseConfig
 root_path = None
 
+toastr = Toastr()
 
 def create_app(config=BaseConfig):
     global root_path
@@ -16,6 +18,8 @@ def create_app(config=BaseConfig):
 
     # new app object
     app = Flask('manage')
+
+    toastr.init_app(app)
 
     # configure app
     root_path = app.root_path

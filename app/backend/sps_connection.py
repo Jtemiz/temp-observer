@@ -1,13 +1,12 @@
 import logging
 import socket
 import traceback
-# socket-adresses for communicating with Arduino
 import socketserver
 import threading
 from configparser import ConfigParser
 from datetime import datetime
 
-import app.globals
+import app.globals as glob
 from app.globals import VALUES
 from app.backend.db_connection import insertValue
 
@@ -37,14 +36,15 @@ def sendStatus():
     """
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto(app.globals.WARN_LEVEL, (ARD_UDP_IP_SEND, ARD_UDP_PORT_SEND))
+        sock.sendto(glob.WARN_LEVEL, (ARD_UDP_IP_SEND, ARD_UDP_PORT_SEND))
         sock.close()
     except Exception as ex:
         logging.error("arduino_connection.sendStatus(): " + str(ex) +
                       "\n" + traceback.format_exc())
 
+
 def resetWarnLevel():
-    app.globals.WARN_LEVEL = 0
+    glob.WARN_LEVEL = 0
     logging.info("sps_connection.resetWarnLevel() + \n ###############################################################")
 
 
@@ -83,9 +83,8 @@ class UDPServer(threading.Thread):
             self.udp_server_object = socketserver.ThreadingUDPServer(self.server_address, MyUDPRequestHandler)
             self.udp_server_object.serve_forever()
         except Exception as ex:
-            app.globals.WARN_LEVEL = 3
+            glob.setWarnLevel(3)
             logging.error("UDPServer.run(): " + str(ex) + "\n" + traceback.format_exc())
-
 
     def stop(self):
         try:
@@ -94,7 +93,7 @@ class UDPServer(threading.Thread):
             logging.error("UDPServer.stop(): " + str(ex) + "\n" + traceback.format_exc())
 
 
-class SUDPServer():
+class SUDPServer:
     __server: socketserver.ThreadingUDPServer = None
 
     @staticmethod

@@ -13,8 +13,10 @@ def runServer():
     while True:
         i += 1
         if i == 5:
-            sock.sendto(bytes("STAT " + str(datetime.datetime.now()), "ascii"), ("127.0.0.1", 5100))
-        sock.sendto(genMessage(i), ("127.0.0.1", 5100))
+            sock.sendto(bytes("STAT; " + str(datetime.datetime.now()), "ascii"), ("127.0.0.1", 5100))
+        tmpstr = genMessage(i)
+        print(tmpstr)
+        sock.sendto(tmpstr, ("127.0.0.1", 5100))
         time.sleep(5)
 
 
@@ -33,7 +35,6 @@ def changeTemps():
             temps[i] += random.random() * 5
         else:
             temps[i] -= random.random() * 5
-    print(temps)
 
 
 runServer()
