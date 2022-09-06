@@ -89,7 +89,7 @@ main {
 .lh-tight { line-height: 1.25; }
 
 .jumbotron-custom {
-    margin-top: min(70px, 10%);
+    margin-top: min(60px, 8vh);
     background-color: #e9ecef;
     border-radius: .3rem;
     padding: 50px;

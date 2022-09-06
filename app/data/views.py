@@ -1,4 +1,4 @@
-
+import json
 import logging
 import traceback
 import io
@@ -43,7 +43,7 @@ def download_csv():
             output,
             mimetype="text/csv",
             headers={"Content-disposition":
-                         "attachment; filename=" + dateFrom + "_" + dateTo})
+                         "attachment; filename=TempAufzeichnung_"+ dateFrom + "_" + dateTo})
     except Exception as ex:
         logging.error("Data.download_csv(): " + str(ex) +
                       "\n" + traceback.format_exc())
@@ -66,15 +66,3 @@ def searchValues():
     except Exception as ex:
         logging.error("Data.getTable(): " + str(ex) +
                       "\n" + traceback.format_exc())
-
-
-
-"""
-SELECT A, B FROM tableA
-UNION
-SELECT A, B FROM tableB
-EXCEPT
-SELECT A, B FROM tableA
-INTERSECT
-SELECT A B FROM tableB;
-"""

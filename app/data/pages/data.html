@@ -38,7 +38,7 @@
         <li><a class="dropdown-item" onclick="chooseLastMonth()">Letzter Monat</a></li>
         <li><a class="dropdown-item" onclick="chooseLast3Month()">Letzten 3 Monate</a></li>
     </ul>
-    <button class="btn data-btn-custom" type="button" id="createPDFBtn" onclick="openDataPDF()" hidden>
+    <button class="btn data-btn-custom" type="button" id="createPDFBtn" onclick="downloadDataPDF()" hidden>
         <img src="{{ url_for('static', filename='assets/file-pdf-solid.svg') }}" height="20">
     </button>
     <button class="btn data-btn-custom" type="button" id="createCSVBtn" onclick="saveCSV()" hidden>

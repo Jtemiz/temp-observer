@@ -260,7 +260,11 @@ function table(data, columns) {
 }
 
 function openDataPDF() {
-    pdfMake.createPdf(createPDFDocDefinition()).open();
+    pdfMake.createPdf(createPDFDocDefinition()).open()
+}
+
+function downloadDataPDF() {
+    pdfMake.createPdf(createPDFDocDefinition()).download(`TempAufzeichnung_${searchMinDate}_${searchMaxDate}.pdf`);
 }
 
 function chooseLastWeek() {

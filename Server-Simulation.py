@@ -32,9 +32,10 @@ def changeTemps():
     global temps
     for i in range(len(temps)):
         if temps[i] < median * 1.05:
-            temps[i] += random.random() * 5
+            temps[i] += round(random.random() * 5, 2)
         else:
-            temps[i] -= random.random() * 5
-
+            temps[i] -= round(random.random() * 5, 2)
+    for i in range(len(temps)):
+        temps[i] = round(temps[i], 2)
 
 runServer()

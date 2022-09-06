@@ -1,9 +1,11 @@
-create table `values`
+create table messwerte
 (
     zeit  datetime not null
         primary key,
-    temp1 float    null,
-    temp2 float    null,
-    temp3 float    null,
-    temp4 float    null
-);
+    temp1 float,
+    temp2 float,
+    temp3 float,
+    temp4 float
+)
+    go
+

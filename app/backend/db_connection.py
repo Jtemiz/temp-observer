@@ -2,7 +2,7 @@ import datetime
 import logging
 import traceback
 import csv
-import pymysql
+import pyodbc
 from dbutils.persistent_db import PersistentDB
 
 import app.factory
@@ -11,27 +11,30 @@ from configparser import ConfigParser
 import pandas as pd
 import os
 
+
+
 config = ConfigParser()
 config.read('static/preferences.ini')
 db_config = {
-    'host': config['mysql']['host'],
-    'user': config['mysql']['user'],
-    'password': config['mysql']['password'],
-    'database': config['mysql']['database'],
-    'connect_timeout': int(config['mysql']['connect_timeout'])
+    'host': config['mssql']['host'],
+    'user': config['mssql']['user'],
+    'password': config['mssql']['password'],
+    'database': config['mssql']['database'],
+    'connect_timeout': int(config['mssql']['connect_timeout']),
+    'driver': config['mssql']['driver'],
+    'TrustServerCertificate': config['mssql']['TSC'],
 }
 
-mysql_connection_pool = PersistentDB(
-    creator=pymysql,
+sql_connection_pool = PersistentDB(
+    creator=pyodbc,
     **db_config
 )
 
-
 def createTable(tableName):
     try:
-        cnx = mysql_connection_pool.connection()
+        cnx = sql_connection_pool.connection()
         cursor = cnx.cursor()
-        sql = "CREATE TABLE %s LIKE `values`"
+        sql = "CREATE TABLE ? LIKE messwerte"
         cursor.execute(sql, (tableName))
         cnx.commit()
         cursor.close()
@@ -42,19 +45,21 @@ def createTable(tableName):
 
 def insertValue(data):
     try:
-        cnx = mysql_connection_pool.connection()
+        cnx = sql_connection_pool.connection()
         cursor = cnx.cursor()
         fileSize = os.path.getsize(app.factory.root_path + '/logs/tmpBuffer.csv')
         # regular case: There was no connection error and is no connection error
         if fileSize == 0:
-            sql = "INSERT INTO `values` VALUES (%s, %s, %s, %s, %s)"
-            cursor.execute(sql, (str(data['time']), data['temp1'], data['temp2'], data['temp3'], data['temp4']))
+            sql = "INSERT INTO messwerte VALUES (?,?,?,?,?)"
+            cursor.execute(sql, (data['time'], data['temp1'], data['temp2'], data['temp3'], data['temp4']))
         # there was a connection error and now it is solved --> insert values from the last times
         else:
             reader = pd.read_csv(app.factory.root_path + '/logs/tmpBuffer.csv', header=None)
             tmpdata = list(reader.values.tolist())
-            tmpdata.append([str(data['time']), data['temp1'], data['temp2'], data['temp3'], data['temp4']])
-            sql = "INSERT INTO `values` (zeit, temp1, temp2, temp3, temp4) VALUES (%s, %s, %s, %s, %s)"
+            for row in tmpdata:
+                row[0] = datetime.datetime.strptime(row[0], '%Y-%m-%d %H:%M:%S.%f')
+            tmpdata.append([data['time'], data['temp1'], data['temp2'], data['temp3'], data['temp4']])
+            sql = "INSERT INTO messwerte (zeit, temp1, temp2, temp3, temp4) VALUES (?,?,?,?,?)"
             cursor.executemany(sql, tmpdata)
             with open(app.factory.root_path + '/logs/tmpBuffer.csv', 'w') as file:
                 file.truncate()
@@ -66,7 +71,7 @@ def insertValue(data):
             glob.setWarnLevel(2)
             with open(app.factory.root_path + '/logs/tmpBuffer.csv', 'a') as f:
                 writer = csv.writer(f)
-                writer.writerow([str(data['time']), data['temp1'], data['temp2'], data['temp3'], data['temp4']])
+                writer.writerow([data['time'], data['temp1'], data['temp2'], data['temp3'], data['temp4']])
                 logging.error("db_connection.insertValue(): " + str(ex) + "\n" + traceback.format_exc())
         except Exception as ex:
             glob.setWarnLevel(3)
@@ -75,13 +80,18 @@ def insertValue(data):
 
 def getValuesFromTo(timeFrom, timeTo):
     try:
-        cnx = mysql_connection_pool.connection()
+        timeFrom = datetime.datetime.strptime(timeFrom, '%Y-%m-%d')
+        timeTo = datetime.datetime.strptime(timeTo + ' 23:59:59', '%Y-%m-%d %H:%M:%S')
+        cnx = sql_connection_pool.connection()
         cursor = cnx.cursor()
-        sql = "SELECT zeit, temp1, temp2, temp3, temp4 FROM `values` WHERE zeit >= %s AND zeit <= %s"
-        cursor.execute(sql, (timeFrom, timeTo + '+ 23:59:59.999'))
-        result = cursor.fetchall()
+        sql = "SELECT zeit, temp1, temp2, temp3, temp4 FROM messwerte WHERE zeit >= ? AND zeit <= ?"
+        cursor.execute(sql, (timeFrom, timeTo))
+        rows = cursor.fetchall()
         cursor.close()
         cnx.close()
+        result = []
+        for row in rows:
+            result.append([x for x in row])
         return result
     except Exception as ex:
         glob.setWarnLevel(1)
@@ -91,9 +101,9 @@ def getValuesFromTo(timeFrom, timeTo):
 
 def getMinMaxDate():
     try:
-        cnx = mysql_connection_pool.connection()
+        cnx = sql_connection_pool.connection()
         cursor = cnx.cursor()
-        sql = "SELECT MIN(zeit), MAX(zeit) FROM `values`"
+        sql = "SELECT MIN(zeit), MAX(zeit) FROM messwerte"
         cursor.execute(sql, )
         result = cursor.fetchone()
         cursor.close()
@@ -112,9 +122,9 @@ def getMinMaxDate():
 
 def getLatestValues(amount):
     try:
-        cnx = mysql_connection_pool.connection()
+        cnx = sql_connection_pool.connection()
         cursor = cnx.cursor()
-        sql = "SELECT * FROM `values` ORDER BY zeit DESC LIMIT %s"
+        sql = "SELECT TOP(?) * FROM messwerte ORDER BY zeit DESC"
         cursor.execute(sql, amount)
         result = cursor.fetchall()
         cursor.close()
