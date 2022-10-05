@@ -23,7 +23,8 @@ db_config = {
 
 mysql_connection_pool = PersistentDB(
     creator=pymysql,
-    **db_config
+    **db_config,
+    closeable=True
 )
 
 
