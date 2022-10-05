@@ -1,0 +1,1475 @@
+2022-10-05 12:58:37,101 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 12:58:37,937 - ERROR: db_connection.insertValue(): Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 54, in insertValue
+    reader = pd.read_csv(app.factory.root_path + '/logs/tmpBuffer.csv', header=None)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 581, in _read
+    return parser.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1250, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 225, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 805, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 861, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 1960, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+
+2022-10-05 12:58:40,422 - INFO: 192.168.0.73 - - [05/Oct/2022 12:58:40] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 12:58:45,727 - ERROR: db_connection.insertValue(): Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 54, in insertValue
+    reader = pd.read_csv(app.factory.root_path + '/logs/tmpBuffer.csv', header=None)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 581, in _read
+    return parser.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1250, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 225, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 805, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 861, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 1960, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+
+2022-10-05 12:58:51,932 - ERROR: db_connection.insertValue(): Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 54, in insertValue
+    reader = pd.read_csv(app.factory.root_path + '/logs/tmpBuffer.csv', header=None)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 581, in _read
+    return parser.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1250, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 225, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 805, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 861, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 1960, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 4, saw 5
+
+
+2022-10-05 12:58:59,395 - ERROR: db_connection.insertValue(): [Errno 2] No such file or directory: '/var/www/html/temp-observer/logs/tmpBuffer.csv'
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 47, in insertValue
+    fileSize = os.path.getsize(app.factory.root_path + '/logs/tmpBuffer.csv')
+  File "/usr/lib/python3.9/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/html/temp-observer/logs/tmpBuffer.csv'
+
+2022-10-05 13:00:30,534 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 13:00:34,152 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:34] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:00:53,262 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "GET / HTTP/1.1" 200 -
+2022-10-05 13:00:53,317 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,330 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,334 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,342 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,343 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,348 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,351 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,353 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,375 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,377 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,383 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,385 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:53,427 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:53] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:00:54,901 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "GET / HTTP/1.1" 200 -
+2022-10-05 13:00:54,930 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,937 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,940 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,944 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,950 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,952 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,956 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,959 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,977 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,979 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,984 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:54,988 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:54] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:55,033 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:55] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:00:56,397 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "GET / HTTP/1.1" 200 -
+2022-10-05 13:00:56,418 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,423 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,427 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,433 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,437 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,442 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,450 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,452 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,478 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,479 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,481 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,488 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:00:56,535 - INFO: 192.168.0.73 - - [05/Oct/2022 13:00:56] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:01:06,170 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "GET / HTTP/1.1" 200 -
+2022-10-05 13:01:06,363 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,364 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,467 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,474 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,518 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,568 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,607 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,609 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,716 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,770 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,810 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,816 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:06,911 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:06] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:01:10,318 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:01:10,498 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,535 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,556 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,571 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,669 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,718 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,766 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,782 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,807 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,850 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:10,917 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:10] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,051 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,064 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,110 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,172 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,201 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,265 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:11,271 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:11] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:01:46,505 - INFO: 192.168.0.73 - - [05/Oct/2022 13:01:46] "GET /searchValues?from=2022-09-21&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:08:09,636 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:08:09,667 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,675 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,679 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,689 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,691 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,698 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,699 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,705 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,707 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,711 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,715 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,733 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,735 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,739 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,743 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,750 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,754 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:09,756 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:09] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,613 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:08:11,640 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,648 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,652 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,656 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,661 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,662 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,668 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,672 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,677 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,679 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,683 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,689 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,693 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,696 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,699 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,705 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,708 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:11,712 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:11] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,537 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "GET / HTTP/1.1" 200 -
+2022-10-05 13:08:14,575 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,579 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,587 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,589 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,590 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,597 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,600 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,602 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,622 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,623 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,625 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,626 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:08:14,665 - INFO: 192.168.0.73 - - [05/Oct/2022 13:08:14] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:13:30,331 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:13:42,118 - ERROR: UDPServer.run(): [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/sps_connection.py", line 83, in run
+    self.udp_server_object = socketserver.ThreadingUDPServer(self.server_address, MyUDPRequestHandler)
+  File "/usr/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 99] Cannot assign requested address
+
+2022-10-05 13:15:15,825 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 13:15:21,367 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "GET / HTTP/1.1" 200 -
+2022-10-05 13:15:21,446 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,447 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,452 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,453 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,458 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,469 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,472 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,475 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,496 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,497 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,502 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,505 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:21,539 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:21] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:15:32,542 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:15:32,583 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,588 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,592 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,594 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,598 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,604 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,606 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,612 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,616 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,618 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,621 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,647 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,649 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,653 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,657 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,663 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,667 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:32,670 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:32] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:15:37,052 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:37] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:15:45,516 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:45] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:15:50,352 - INFO: 192.168.0.73 - - [05/Oct/2022 13:15:50] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:16:09,750 - INFO: 192.168.0.73 - - [05/Oct/2022 13:16:09] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:17:17,538 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:17] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:17:19,445 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:17:19,478 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,481 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,486 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,490 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,492 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,496 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,501 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,506 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,509 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,514 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,516 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,522 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,524 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,533 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,534 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,536 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,540 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:19,544 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:19] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:21,322 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:21] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:17:38,323 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:38] "GET /searchValues?from=2022-10-04&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:17:42,404 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "GET / HTTP/1.1" 200 -
+2022-10-05 13:17:42,447 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,451 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,461 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,462 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,468 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,472 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,476 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,481 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,509 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,514 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,519 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,522 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:17:42,559 - INFO: 192.168.0.73 - - [05/Oct/2022 13:17:42] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 13:18:33,732 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:18:33,770 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,772 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,775 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,782 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,783 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,789 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,791 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,795 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,799 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,805 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,806 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,819 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,820 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,826 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,828 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,843 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,851 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:33,852 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:33] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:18:57,043 - INFO: 192.168.0.73 - - [05/Oct/2022 13:18:57] "GET /searchValues?from=2022-09-05&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:21:35,337 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:21:38,226 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:21:44,827 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:21:53,327 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:21:58,326 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:22:05,924 - ERROR: db_connection.insertValue(): (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/usr/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2022-10-05 13:28:59,122 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:28:59,156 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,161 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,170 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,172 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,177 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,181 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,186 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,189 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,195 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,197 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,200 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,205 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,210 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,211 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,216 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,221 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,226 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:28:59,229 - INFO: 192.168.0.73 - - [05/Oct/2022 13:28:59] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,365 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:29:00,395 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,400 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,403 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,406 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,416 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,418 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,424 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,429 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,439 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,445 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,446 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,459 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,461 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,463 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,472 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,478 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,483 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:00,485 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:00] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:36,763 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 13:29:41,679 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:29:41,744 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,749 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,770 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,772 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,774 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,777 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,784 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,785 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,793 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,797 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,799 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,819 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,821 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,827 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,828 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,833 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,839 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:41,840 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:41] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:42,949 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:29:42,976 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:42,979 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:42,987 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:42,990 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:29:42,997 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:42] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,006 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,011 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,014 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,023 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,027 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,035 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,043 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,046 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,047 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,056 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,065 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,067 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:43,070 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:43] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:29:48,753 - INFO: 192.168.0.73 - - [05/Oct/2022 13:29:48] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:35:54,124 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:35:54,158 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,161 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,163 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,170 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,173 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,175 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,184 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,186 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,188 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,192 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,196 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,211 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,216 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,218 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,222 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,228 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,233 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:35:54,235 - INFO: 192.168.0.73 - - [05/Oct/2022 13:35:54] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:36:01,649 - INFO: 192.168.0.73 - - [05/Oct/2022 13:36:01] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:36:02,519 - INFO: 192.168.0.73 - - [05/Oct/2022 13:36:02] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:36:17,141 - INFO: 192.168.0.73 - - [05/Oct/2022 13:36:17] "GET /static/vfs_fonts.min.js HTTP/1.1" 200 -
+2022-10-05 13:36:49,339 - INFO: 192.168.0.73 - - [05/Oct/2022 13:36:49] "GET /static/pdfmake.min.js.map HTTP/1.1" 200 -
+2022-10-05 13:41:07,581 - INFO: 192.168.0.73 - - [05/Oct/2022 13:41:07] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:45:02,175 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:11,166 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:22,867 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:28,466 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:36,566 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:42,967 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:51,467 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:45:57,067 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:46:06,668 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:46:12,168 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:46:17,168 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:46:26,569 - ERROR: db_connection.insertValue(): (1040, 'Too many connections')
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 207, in connection
+    con = self.thread.connection
+  File "/usr/lib/python3.9/_threading_local.py", line 223, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'local' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 45, in insertValue
+    cnx = mysql_connection_pool.connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 209, in connection
+    con = self.steady_connection()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/persistent_db.py", line 194, in steady_connection
+    return connect(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 135, in connect
+    return SteadyDBConnection(
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 190, in __init__
+    self._store(self._create())
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/dbutils/steady_db.py", line 208, in _create
+    con = self._creator(*self._args, **self._kwargs)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1040, 'Too many connections')
+
+2022-10-05 13:46:31,654 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 13:46:37,501 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:46:37,605 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,635 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,636 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,638 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,639 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,646 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,648 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,655 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,656 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,662 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,664 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,705 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,707 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,708 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,716 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,717 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,723 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,725 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:37,814 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:37] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 13:46:44,863 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:44] "GET /data HTTP/1.1" 200 -
+2022-10-05 13:46:44,963 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:44] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:44,981 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,013 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,019 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,039 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,056 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,068 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,069 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,095 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,118 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,133 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,145 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,178 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,179 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,216 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,235 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,268 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,291 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 13:46:45,310 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:45] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 13:46:46,120 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:46] "GET /searchValues?from=2022-09-05&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:46:49,507 - INFO: 192.168.0.73 - - [05/Oct/2022 13:46:49] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:47:03,865 - INFO: 192.168.0.73 - - [05/Oct/2022 13:47:03] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 13:58:35,183 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:01:21,209 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:07:31,548 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:07:56,655 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:07:56,723 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,739 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,744 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,752 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,755 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,757 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,763 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,766 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,769 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,775 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,777 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,827 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,828 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,832 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,836 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,841 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,845 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,857 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:07:56,994 - INFO: 192.168.0.73 - - [05/Oct/2022 14:07:56] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 14:08:08,789 - ERROR: db_connection.getValuesFromTo(): can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/backend/db_connection.py", line 86, in getValuesFromTo
+    logging.info("Ausgelesene Werte in db_connection: " + len(result))
+TypeError: can only concatenate str (not "int") to str
+
+2022-10-05 14:08:08,790 - ERROR: Data.getTable(): can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/app/data/views.py", line 63, in searchValues
+    logging.info("Ausgelesene Werte views.py: " + len(values))
+TypeError: can only concatenate str (not "int") to str
+
+2022-10-05 14:08:08,791 - ERROR: Exception on /searchValues [GET]
+Traceback (most recent call last):
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/flask/app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "/var/www/html/temp-observer/venv/lib/python3.9/site-packages/flask/app.py", line 1698, in make_response
+    raise TypeError(
+TypeError: The view function for 'data_bp.searchValues' did not return a valid response. The function either returned None or ended without a return statement.
+2022-10-05 14:08:08,797 - INFO: 192.168.0.73 - - [05/Oct/2022 14:08:08] "[35m[1mGET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1[0m" 500 -
+2022-10-05 14:10:59,423 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:11:03,121 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:11:03,206 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,220 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,222 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,224 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,227 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,234 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,235 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,244 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,245 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,248 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,251 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,309 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,312 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,316 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,320 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,328 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,329 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,332 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:11:03,436 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:03] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 14:11:08,627 - INFO: 192.168.0.73 - - [05/Oct/2022 14:11:08] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:12:03,650 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:12:03,684 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,692 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,698 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,704 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,709 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,712 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,717 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,722 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,727 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,733 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,739 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,743 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,758 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,768 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,770 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,826 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,831 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,833 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:12:03,923 - INFO: 192.168.0.73 - - [05/Oct/2022 14:12:03] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 14:15:40,204 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:15:43,597 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:15:43,688 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,689 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,696 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,713 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,715 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,716 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,718 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,725 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,726 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,733 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,734 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,788 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,790 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,792 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,798 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,801 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,806 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,808 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:15:43,904 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:43] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 14:15:45,377 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:15:45,385 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:15:45,388 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:45] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:15:47,808 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:15:47,814 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:15:47,817 - INFO: 192.168.0.73 - - [05/Oct/2022 14:15:47] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:18:16,790 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:18:18,828 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:18:18,912 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,926 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,928 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,932 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,946 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,948 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,950 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,956 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,960 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,963 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,965 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,976 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,979 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,983 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:18,987 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:18] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:19,021 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:19] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:19,025 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:19] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:19,026 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:19] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:18:19,131 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:19] "[36mGET /static/pdfmake.min.js.map HTTP/1.1[0m" 304 -
+2022-10-05 14:18:21,078 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:18:21,080 - ERROR: Auslesezeitraum db_connection: 2022-09-28 2022-10-05
+2022-10-05 14:18:21,088 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:18:21,088 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:18:21,090 - INFO: 192.168.0.73 - - [05/Oct/2022 14:18:21] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:23:29,014 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-04
+2022-10-05 14:23:29,015 - ERROR: Auslesezeitraum db_connection: 2022-09-28 2022-10-04
+2022-10-05 14:23:29,023 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:23:29,023 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:23:29,025 - INFO: 192.168.0.73 - - [05/Oct/2022 14:23:29] "GET /searchValues?from=2022-09-28&to=2022-10-04 HTTP/1.1" 200 -
+2022-10-05 14:23:44,952 - ERROR: Auslesezeitraum view.py2022-09-24 2022-10-04
+2022-10-05 14:23:44,952 - ERROR: Auslesezeitraum db_connection: 2022-09-24 2022-10-04
+2022-10-05 14:23:46,226 - ERROR: Ausgelesene Werte in db_connection: 20748
+2022-10-05 14:23:46,226 - ERROR: Ausgelesene Werte views.py: 20748
+2022-10-05 14:23:46,882 - INFO: 192.168.0.73 - - [05/Oct/2022 14:23:46] "GET /searchValues?from=2022-09-24&to=2022-10-04 HTTP/1.1" 200 -
+2022-10-05 14:24:04,313 - ERROR: Auslesezeitraum view.py2022-09-24 2022-10-05
+2022-10-05 14:24:04,314 - ERROR: Auslesezeitraum db_connection: 2022-09-24 2022-10-05
+2022-10-05 14:24:05,602 - ERROR: Ausgelesene Werte in db_connection: 20748
+2022-10-05 14:24:05,602 - ERROR: Ausgelesene Werte views.py: 20748
+2022-10-05 14:24:06,255 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:06] "GET /searchValues?from=2022-09-24&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:24:27,120 - ERROR: Auslesezeitraum view.py2022-10-03 2022-10-05
+2022-10-05 14:24:27,120 - ERROR: Auslesezeitraum db_connection: 2022-10-03 2022-10-05
+2022-10-05 14:24:27,127 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:24:27,128 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:24:27,130 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:27] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:24:28,935 - ERROR: Auslesezeitraum view.py2022-10-03 2022-10-05
+2022-10-05 14:24:28,935 - ERROR: Auslesezeitraum db_connection: 2022-10-03 2022-10-05
+2022-10-05 14:24:28,942 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:24:28,943 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:24:28,945 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:28] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:24:30,543 - ERROR: Auslesezeitraum view.py2022-10-03 2022-10-05
+2022-10-05 14:24:30,543 - ERROR: Auslesezeitraum db_connection: 2022-10-03 2022-10-05
+2022-10-05 14:24:30,549 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:24:30,550 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:24:30,552 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:30] "GET /searchValues?from=2022-10-03&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:24:42,061 - ERROR: Auslesezeitraum view.py2022-10-03 2022-10-06
+2022-10-05 14:24:42,062 - ERROR: Auslesezeitraum db_connection: 2022-10-03 2022-10-06
+2022-10-05 14:24:42,168 - ERROR: Ausgelesene Werte in db_connection: 848
+2022-10-05 14:24:42,168 - ERROR: Ausgelesene Werte views.py: 848
+2022-10-05 14:24:42,208 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:42] "GET /searchValues?from=2022-10-03&to=2022-10-06 HTTP/1.1" 200 -
+2022-10-05 14:24:44,064 - ERROR: Auslesezeitraum view.py2022-10-03 2022-10-06
+2022-10-05 14:24:44,064 - ERROR: Auslesezeitraum db_connection: 2022-10-03 2022-10-06
+2022-10-05 14:24:44,181 - ERROR: Ausgelesene Werte in db_connection: 848
+2022-10-05 14:24:44,182 - ERROR: Ausgelesene Werte views.py: 848
+2022-10-05 14:24:44,209 - INFO: 192.168.0.73 - - [05/Oct/2022 14:24:44] "GET /searchValues?from=2022-10-03&to=2022-10-06 HTTP/1.1" 200 -
+2022-10-05 14:25:06,433 - ERROR: Auslesezeitraum view.py2022-10-05 2022-10-06
+2022-10-05 14:25:06,434 - ERROR: Auslesezeitraum db_connection: 2022-10-05 2022-10-06
+2022-10-05 14:25:06,537 - ERROR: Ausgelesene Werte in db_connection: 853
+2022-10-05 14:25:06,537 - ERROR: Ausgelesene Werte views.py: 853
+2022-10-05 14:25:06,578 - INFO: 192.168.0.73 - - [05/Oct/2022 14:25:06] "GET /searchValues?from=2022-10-05&to=2022-10-06 HTTP/1.1" 200 -
+2022-10-05 14:26:04,830 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "GET / HTTP/1.1" 200 -
+2022-10-05 14:26:04,899 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,901 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,902 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,906 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,911 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,914 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,921 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,923 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,987 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,991 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,996 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:26:04,999 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:04] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:26:05,036 - INFO: 192.168.0.73 - - [05/Oct/2022 14:26:05] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 14:31:03,465 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:31:06,241 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "GET / HTTP/1.1" 200 -
+2022-10-05 14:31:06,302 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,307 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,318 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,321 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,323 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,327 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,330 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,333 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/chart.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,366 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,370 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,374 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,378 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:06,410 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:06] "GET /chart-data HTTP/1.1" 200 -
+2022-10-05 14:31:08,766 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:31:08,806 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,811 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,815 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,819 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,821 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,831 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,833 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,834 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,837 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,840 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,844 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,869 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,870 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,874 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,878 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,889 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,891 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:08,895 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:08] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:10,304 - ERROR: Auslesezeitraum view.py2022-09-21 2022-10-05
+2022-10-05 14:31:10,305 - ERROR: Auslesezeitraum db_connection: 2022-09-21 2022-10-05
+2022-10-05 14:31:13,765 - ERROR: Ausgelesene Werte in db_connection: 57070
+2022-10-05 14:31:13,765 - ERROR: Ausgelesene Werte views.py: 57070
+2022-10-05 14:31:15,404 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:31:15,468 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,482 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,489 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,520 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,532 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,576 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,610 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "GET /searchValues?from=2022-09-21&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:31:15,611 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,630 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,632 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,636 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,641 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,645 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,646 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,653 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,657 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,661 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,664 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:15,666 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:15] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:31:18,077 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:31:18,077 - ERROR: Auslesezeitraum db_connection: 2022-09-28 2022-10-05
+2022-10-05 14:31:18,084 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:31:18,084 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:31:18,086 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:18] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:31:19,243 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:31:19,243 - ERROR: Auslesezeitraum db_connection: 2022-09-28 2022-10-05
+2022-10-05 14:31:19,250 - ERROR: Ausgelesene Werte in db_connection: 0
+2022-10-05 14:31:19,250 - ERROR: Ausgelesene Werte views.py: 0
+2022-10-05 14:31:19,252 - INFO: 192.168.0.73 - - [05/Oct/2022 14:31:19] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
+2022-10-05 14:33:25,364 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:34:24,016 - INFO:  * Running on http://192.168.3.10:80/ (Press CTRL+C to quit)
+2022-10-05 14:34:31,945 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:31] "GET /data HTTP/1.1" 200 -
+2022-10-05 14:34:31,989 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:31] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:34:31,993 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:31] "[36mGET /static/toastr.min.css HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,005 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,006 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,008 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,015 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/data.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,017 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/toastr.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,026 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/chart.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,027 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/pdfmake.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,031 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/chartjs-plugin-zoom.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,033 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/vfs_fonts.min.js HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,040 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/Mack_Logo.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,041 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/Sennerei_Logo.png HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,046 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/graph-up.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,049 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/archive.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,056 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/file-pdf-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,058 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/search-icon.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:32,061 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:32] "[36mGET /static/assets/file-excel-solid.svg HTTP/1.1[0m" 304 -
+2022-10-05 14:34:37,127 - ERROR: Auslesezeitraum view.py2022-09-28 2022-10-05
+2022-10-05 14:34:37,128 - ERROR: Auslesezeitraum db_connection: 2022-09-28 2022-10-05
+2022-10-05 14:34:37,255 - ERROR: Ausgelesene Werte in db_connection: 944
+2022-10-05 14:34:37,255 - ERROR: Ausgelesene Werte views.py: 944
+2022-10-05 14:34:37,286 - INFO: 192.168.0.73 - - [05/Oct/2022 14:34:37] "GET /searchValues?from=2022-09-28&to=2022-10-05 HTTP/1.1" 200 -
