@@ -52,13 +52,13 @@ def getMeasurementValues():
                 data = json.dumps(tmp, default=str)
                 del VALUES[:len(tmp)]
                 yield f"data: {data}\n\n"
-                time.sleep(5.)
+                time.sleep(1.)
             except Exception as ex:
                 logging.error("Measurement.getMeasurementValues(): " + str(ex) +
                               "\n" + traceback.format_exc())
 
 
-def stopConnection():
+def stopConnection(sig, frame):
     try:
         SPS_Con.SUDPServer.stop_server()
     except Exception as ex:

@@ -1,7 +1,10 @@
 import datetime
 import random
 import socket
+import socketserver
+import threading
 import time
+import io
 
 temps = [5, 5, 5, 5]
 median = 70
@@ -17,7 +20,7 @@ def runServer():
         tmpstr = genMessage(i)
         print(tmpstr)
         sock.sendto(tmpstr, ("127.0.0.1", 5100))
-        time.sleep(5)
+        time.sleep(1)
 
 
 def genMessage(index):
