@@ -45,7 +45,9 @@ function searchValues() {
                     config.data.datasets[3].data.push(data.values[i][4]);
                 }
                 lineChart.update();
-                $("#openChartBtn").removeAttr("hidden");
+                if (data.metaData.dataSize < 1000) {
+                    $("#openChartBtn").removeAttr("hidden");
+                }
                 $("#createPDFBtn").removeAttr("hidden");
                 $("#createCSVBtn").removeAttr("hidden");
             }

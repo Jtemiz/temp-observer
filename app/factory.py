@@ -1,8 +1,9 @@
 import logging
+import signal
 
 from flask import Flask
 from flask_toastr import Toastr
-from app.measurement.views import initConnection
+from app.measurement.views import initConnection, stopConnection
 from app.config import DevConfig, BaseConfig
 root_path = None
 
@@ -39,8 +40,8 @@ def create_app(config=BaseConfig):
     logging.basicConfig(filename=app.root_path + '/logs/app.log', level=logging.WARNING,
                     format='%(asctime)s - %(levelname)s: %(message)s')
     logging.info("[i] App initialized")
-
     initConnection()
+    signal.signal(signal.SIGINT, stopConnection)
 
     return app
 

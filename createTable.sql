@@ -7,5 +7,3 @@ create table messwerte
     temp3 float,
     temp4 float
 )
-    go
-
