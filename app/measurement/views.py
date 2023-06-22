@@ -4,9 +4,10 @@ from app.globals import VALUES, MEASUREMENT_IS_ACTIVE
 import app.globals as glob
 import app.backend.db_connection as DBCon
 import app.backend.sps_connection as SPS_Con
+from threading import Event
 
 measurement_bp = Blueprint('measurement_bp', __name__, template_folder='pages')
-
+sse_active = Event()
 
 @measurement_bp.route('/')
 def chart():
@@ -24,6 +25,8 @@ def chart():
 
 @measurement_bp.route('/chart-data', methods=['GET'])
 def chart_data():
+    global sse_active
+    sse_active.clear()
     amount = 20
     lastVals = DBCon.getLatestValues(amount)
     try:
@@ -43,9 +46,13 @@ def chart_data():
         logging.error("Measurement.chart_data(): " + str(ex) +
                       "\n" + traceback.format_exc())
 
+@measurement_bp.route('/kill-sse', methods=['GET'])
+def kill_sse():
+    sse_active.set()
+    return Response('200')
 
 def getMeasurementValues():
-    while True:
+    while not sse_active.is_set():
         if len(VALUES) != 0:
             try:
                 tmp = VALUES
@@ -67,11 +74,12 @@ def stopConnection(sig, frame):
 
 
 def initConnection():
-    try:
-        SPS_Con.SUDPServer.start_server()
-    except Exception as ex:
-        logging.error("Measurement.initConnections(): " + str(ex) +
-                      "\n" + traceback.format_exc())
+    while True:
+        try:
+            SPS_Con.SUDPServer.start_server()
+        except Exception as ex:
+            continue
+        break
 
 
 def generateToastr():
